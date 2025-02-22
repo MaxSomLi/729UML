@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="c3">#382854</color>
+    <color name="c9">#95781E</color>
+    <color name="c27">#DBCD5A</color>
+    <color name="c81">#2A99CE</color>
+    <color name="c243">#055049</color>
+    <color name="c729">#7A0F70</color>
+    <color name="c2187">#BC7037</color>
+    <color name="c6561">#0ECEBC</color>
+    <color name="grid">#86C4CC</color>
+    <color name="background">#A183D9</color>
+    <color name="text">#000000</color>
+</resources>
