@@ -24,7 +24,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.time.LocalTime;
 import java.util.Vector;
 
-public class FourByFour extends AppCompatActivity implements GestureDetector.OnGestureListener {
+public class NumberByNumber extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
     enum WhatToDo {
         RIGHT,
@@ -34,72 +34,29 @@ public class FourByFour extends AppCompatActivity implements GestureDetector.OnG
         FINISH
     }
 
-    private GestureDetector gestureDetector;
-    private float width;
-    private final long SPEED = 30;
-    private final float FACT = 0.225f;
-    private final int SWIPE_THRESHOLD = 100;
-    private final int SWIPE_VELOCITY_THRESHOLD = 100;
-    private final int TILES = 4;
-    private final int TILE_COUNT = TILES * TILES;
-    private final int DECR1 = 1;
-    private final int DECR2 = 2;
-    private final int DECR3 = 3;
-    private final int TILES_FEWER = TILES - DECR1;
-    private final int TILES_EVEN_FEWER = TILES - DECR2;
-    private final int TILES_FEWER_MERGE = TILES - DECR3;
+    protected GestureDetector gestureDetector;
+    protected float width;
+    protected final long SPEED = 30;
+    protected final int SWIPE_THRESHOLD = 100;
+    protected final int SWIPE_VELOCITY_THRESHOLD = 100;
+    protected float FACT;
+    protected int TILES;
+    protected int TILE_COUNT;
+    protected final int DECR1 = 1;
+    protected final int DECR2 = 2;
+    protected final int DECR3 = 3;
+    protected int TILES_FEWER;
+    protected int TILES_EVEN_FEWER;
+    protected int TILES_FEWER_MERGE;
     boolean add = false;
     boolean canSwipe = true;
     Button[][] tiles;
-    Button[][] tilesOnBoard = new Button[][]{
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null}
-    };
+    Button[][] tilesOnBoard;
 
 
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_four_by_four);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            gestureDetector = new GestureDetector(this, this);
-            return insets;
-        });
 
-        width = getResources().getDisplayMetrics().widthPixels * FACT;
 
-        tiles = new Button[][]{
-                {findViewById(R.id.tile00), findViewById(R.id.tile01), findViewById(R.id.tile02), findViewById(R.id.tile03)},
-                {findViewById(R.id.tile10), findViewById(R.id.tile11), findViewById(R.id.tile12), findViewById(R.id.tile13)},
-                {findViewById(R.id.tile20), findViewById(R.id.tile21), findViewById(R.id.tile22), findViewById(R.id.tile23)},
-                {findViewById(R.id.tile30), findViewById(R.id.tile31), findViewById(R.id.tile32), findViewById(R.id.tile33)}
-        };
-        int index = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            index = LocalTime.now().getSecond() % TILE_COUNT;
-        }
-        int i = index / TILES, j = index % TILES;
-        for (int t1 = 0; t1 < TILES; t1++) {
-            for (int t2 = 0; t2 < TILES; t2++) {
-                tiles[t1][t2].setX(width * t2);
-                tiles[t1][t2].setY(width * t1);
-                tiles[t1][t2].setVisibility(View.GONE);
-            }
-        }
-        tiles[i][j].setVisibility(View.VISIBLE);
-        tiles[i][j].setText("3");
-        Button unchoose = findViewById(R.id.unchoose);
-        unchoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                view.getContext().startActivity(new Intent(view.getContext(), MainActivity.class));
-            }
-        });
-    }
+
     @Override
     public boolean onDown(@NonNull MotionEvent motionEvent) {
         return false;
