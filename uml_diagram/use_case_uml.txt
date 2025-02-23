@@ -1,0 +1,24 @@
+@startuml
+actor User
+rectangle Game {
+usecase Play as p
+usecase "Play 4x4" as p4
+usecase "Play 5x5" as p5
+usecase Choose
+usecase "Go Back" as gb
+usecase "Swipe tiles" as st
+}
+User --> p
+User --> p4
+User --> p5
+User --> Choose
+User --> gb
+User --> st
+p4 --> p : <<extends>>
+p5 --> p : <<extends>>
+Choose --> p : <<extends>>
+gb --> p : <<extends>>
+st --> p : <<extends>>
+p4 --> st : <<includes>>
+p5 --> st : <<includes>>
+@enduml
