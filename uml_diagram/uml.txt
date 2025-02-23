@@ -1,0 +1,64 @@
+@startuml
+class MainActivity {
+# onCreate(Bundle): void
+}
+enum WhatToDo {
+RIGHT
+DOWN
+LEFT
+UP
+FINISH
+}
+class NumberByNumber {
+# gestureDetector: GestureDetector
+# width: float
+# SPEED: long
+# SWIPE_THRESHOLD: int
+# SWIPE_VELOCITY_THRESHOLD: int
+# FACT: float
+# TILES: int
+# TILE_COUNT: int
+# DECR1: int
+# DECR2: int
+# DECR3: int
+# TILES_FEWER: int
+# TILES_EVEN_FEWER: int
+# TILES_FEWER_MERGE: int
++ add: boolean
++ canSwipe: boolean
++ tiles: Button[][]
++ tilesOnBoard: Button[][]
++ onDown(MotionEvent): boolean
++ onShowPress(MotionEvent): void
++ onSingleTapUp(MotionEvent): boolean
++ onScroll(MotionEvent, MotionEvent, float, float): boolean
++ onLongPress(MotionEvent): void
++ onTouchEvent(MotionEvent): boolean
++ onFling(MotionEvent, MotionEvent, float, float): boolean
++ addTile(): void
++ moveRight(WhatToDo): void
++ moveLeft(WhatToDo): void
++ moveDown(WhatToDo): void
++ moveUp(WhatToDo): void
++ reassign(): void
++ makeNull(): void
++ handleW(WhatToDo): void
++ moveTiles(WhatToDo): void
++ updateColor(Button, CharSequence): void
++ mergeRight(): void
++ mergeLeft(): void
++ mergeDown(): void
++ mergeUp(): void
+}
+class AppCompatActivity
+class FourByFour {
+# onCreate(Bundle): void
+}
+Class FiveByFive {
+# onCreate(Bundle): void
+}
+MainActivity -|> AppCompatActivity
+NumberByNumber -|> AppCompatActivity
+FourByFour -|> NumberByNumber
+FiveByFive -|> NumberByNumber
+@enduml
