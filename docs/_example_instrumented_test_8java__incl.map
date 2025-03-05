@@ -1,0 +1,15 @@
+<map id="app/src/androidTest/java/com/example/a729/ExampleInstrumentedTest.java" name="app/src/androidTest/java/com/example/a729/ExampleInstrumentedTest.java">
+<area shape="rect" id="Node000001" title=" " alt="" coords="472,5,674,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,120,165,147"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="472,57,178,115,157,119,156,114,176,109,471,52"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="189,112,365,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="486,67,356,109,354,104,484,62"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="389,112,586,155"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="550,66,518,102,514,99,546,63"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="610,120,707,147"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="600,63,639,107,635,110,596,66"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="731,120,892,147"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="645,62,767,111,765,116,643,67"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="917,120,1035,147"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="675,55,906,109,918,113,917,118,904,115,674,60"/>
+</map>
